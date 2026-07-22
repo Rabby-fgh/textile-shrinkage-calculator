@@ -148,3 +148,23 @@ border:none;
 }
 
 }
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+th{
+background:#004aad;
+color:white;
+}
+
+th,td{
+padding:10px;
+text-align:center;
+border:1px solid #ddd;
+}
+
+tr:nth-child(even){
+background:#f8f8f8;
+}

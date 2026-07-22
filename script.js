@@ -65,3 +65,29 @@ Weft : ${weft.toFixed(2)}% (${weftStatus})
 </div>
 
 `;
+function saveReport(){
+
+let buyer=document.getElementById("buyer").value;
+let style=document.getElementById("style").value;
+let fabric=document.getElementById("fabric").value;
+let operator=document.getElementById("operator").value;
+let date=document.getElementById("date").value;
+
+let report={
+buyer,
+style,
+fabric,
+operator,
+date,
+result:document.getElementById("result").innerText
+};
+
+let reports=JSON.parse(localStorage.getItem("reports"))||[];
+
+reports.push(report);
+
+localStorage.setItem("reports",JSON.stringify(reports));
+
+alert("✅ Report Saved Successfully");
+
+}

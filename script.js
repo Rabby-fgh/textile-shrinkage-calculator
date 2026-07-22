@@ -20,12 +20,34 @@ return;
 let warp=((warpAfter-warpBefore)/warpBefore)*100;
 let weft=((weftAfter-weftBefore)/weftBefore)*100;
 
-let warpStatus=Math.abs(warp)<=3?"✅ PASS":"❌ FAIL";
-let weftStatus=Math.abs(weft)<=3?"✅ PASS":"❌ FAIL";
+let buyer = document.getElementById("buyer").value.trim().toUpperCase();
 
+let limit = 3;
+
+if(buyer=="H&M"){
+limit=3;
+}
+else if(buyer=="ZARA"){
+limit=2;
+}
+else if(buyer=="C&A"){
+limit=2.5;
+}
+else if(buyer=="PRIMARK"){
+limit=3;
+}
+
+let warpStatus=Math.abs(warp)<=limit?"✅ PASS":"❌ FAIL";
+let weftStatus=Math.abs(weft)<=limit?"✅ PASS":"❌ FAIL";
 document.getElementById("result").innerHTML=`
 
-<h2>Test Result</h2>
+<h2>Textile Lab Report</h2>
+
+<p><b>Buyer:</b> ${buyer}</p>
+
+<p><b>Allowed Limit:</b> ±${limit}%</p>
+
+<hr>
 
 <hr>
 

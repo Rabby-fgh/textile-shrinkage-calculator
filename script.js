@@ -41,26 +41,27 @@ let warpStatus=Math.abs(warp)<=limit?"✅ PASS":"❌ FAIL";
 let weftStatus=Math.abs(weft)<=limit?"✅ PASS":"❌ FAIL";
 document.getElementById("result").innerHTML=`
 
-<h2>Textile Lab Report</h2>
+<div class="report">
+
+<div class="title">
+TEXTILE LAB REPORT
+</div>
 
 <p><b>Buyer:</b> ${buyer}</p>
-
-<p><b>Allowed Limit:</b> ±${limit}%</p>
-
-<hr>
+<p><b>Limit:</b> ±${limit}%</p>
 
 <hr>
 
-<p><b>Warp Shrinkage:</b> ${warp.toFixed(2)}%</p>
+<div class="${Math.abs(warp)<=limit?'pass':'fail'}">
+Warp : ${warp.toFixed(2)}% (${warpStatus})
+</div>
 
-<p><b>Status:</b> ${warpStatus}</p>
+<br>
 
-<hr>
+<div class="${Math.abs(weft)<=limit?'pass':'fail'}">
+Weft : ${weft.toFixed(2)}% (${weftStatus})
+</div>
 
-<p><b>Weft Shrinkage:</b> ${weft.toFixed(2)}%</p>
-
-<p><b>Status:</b> ${weftStatus}</p>
+</div>
 
 `;
-
-}

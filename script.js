@@ -92,3 +92,27 @@ localStorage.setItem("reports",JSON.stringify(reports));
 alert("✅ Report Saved Successfully");
 loadHistory();
 }
+function loadHistory(){
+
+let reports = JSON.parse(localStorage.getItem("reports")) || [];
+
+let tbody = document.querySelector("#historyTable tbody");
+
+tbody.innerHTML = "";
+
+reports.forEach(function(report){
+
+tbody.innerHTML += `
+<tr>
+<td>${report.buyer}</td>
+<td>${report.style}</td>
+<td>${report.date}</td>
+<td>${report.result.substring(0,30)}...</td>
+</tr>
+`;
+
+});
+
+}
+
+window.onload = loadHistory;

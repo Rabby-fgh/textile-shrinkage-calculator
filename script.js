@@ -58,6 +58,7 @@ Warp : ${warp.toFixed(2)}% (${warpStatus})
 
 <br>
 
+
 <div class="${Math.abs(weft)<=limit?'pass':'fail'}">
 Weft : ${weft.toFixed(2)}% (${weftStatus})
 </div>
@@ -89,5 +90,5 @@ reports.push(report);
 localStorage.setItem("reports",JSON.stringify(reports));
 
 alert("✅ Report Saved Successfully");
-
+loadHistory();
 }

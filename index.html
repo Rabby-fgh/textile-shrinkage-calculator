@@ -1,37 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Textile Shrinkage Calculator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Textile Lab Software</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<h1>Textile Shrinkage Calculator</h1>
+<div class="header">
+Textile Lab Software
+</div>
 
-<label>Before Wash (cm)</label><br>
-<input type="number" id="before"><br><br>
+<div class="container">
 
-<label>After Wash (cm)</label><br>
-<input type="number" id="after"><br><br>
+<div class="grid">
 
-<button onclick="calculate()">Calculate</button>
+<div>
+<label>Buyer Name</label>
+<input type="text" id="buyer">
+</div>
 
-<h2 id="result"></h2>
+<div>
+<label>Style No</label>
+<input type="text" id="style">
+</div>
 
-<script>
-function calculate(){
+<div>
+<label>Fabric</label>
+<input type="text" id="fabric">
+</div>
 
-let before = parseFloat(document.getElementById("before").value);
+<div>
+<label>Operator</label>
+<input type="text" id="operator">
+</div>
 
-let after = parseFloat(document.getElementById("after").value);
+<div>
+<label>Test Date</label>
+<input type="date" id="date">
+</div>
 
-let shrinkage=((after-before)/before)*100;
+<div>
+<label>Wash Method</label>
+<select id="wash">
+<option>Home Wash</option>
+<option>Industrial Wash</option>
+<option>Garment Wash</option>
+</select>
+</div>
 
-document.getElementById("result").innerHTML=
-"Shrinkage = "+shrinkage.toFixed(2)+"%";
+</div>
 
-}
-</script>
+<h2 style="margin-top:30px;">Warp</h2>
+
+<div class="grid">
+
+<div>
+<label>Before Wash</label>
+<input type="number" id="warpBefore">
+</div>
+
+<div>
+<label>After Wash</label>
+<input type="number" id="warpAfter">
+</div>
+
+</div>
+
+<h2 style="margin-top:30px;">Weft</h2>
+
+<div class="grid">
+
+<div>
+<label>Before Wash</label>
+<input type="number" id="weftBefore">
+</div>
+
+<div>
+<label>After Wash</label>
+<input type="number" id="weftAfter">
+</div>
+
+</div>
+
+<button onclick="calculate()">
+Calculate
+</button>
+
+<div class="result" id="result">
+
+Waiting for Calculation...
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>

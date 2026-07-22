@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Textile Shrinkage Calculator</title>
+</head>
+
+<body>
+
+<h1>Textile Shrinkage Calculator</h1>
+
+<label>Before Wash (cm)</label><br>
+<input type="number" id="before"><br><br>
+
+<label>After Wash (cm)</label><br>
+<input type="number" id="after"><br><br>
+
+<button onclick="calculate()">Calculate</button>
+
+<h2 id="result"></h2>
+
+<script>
+function calculate(){
+
+let before = parseFloat(document.getElementById("before").value);
+
+let after = parseFloat(document.getElementById("after").value);
+
+let shrinkage=((after-before)/before)*100;
+
+document.getElementById("result").innerHTML=
+"Shrinkage = "+shrinkage.toFixed(2)+"%";
+
+}
+</script>
+
+</body>
+</html>

@@ -22,20 +22,9 @@ let weft=((weftAfter-weftBefore)/weftBefore)*100;
 
 let buyer = document.getElementById("buyer").value.trim().toUpperCase();
 
-let limit = 3;
+let limit = 5;
 
-if(buyer=="H&M"){
-limit=3;
-}
-else if(buyer=="ZARA"){
-limit=2;
-}
-else if(buyer=="C&A"){
-limit=2.5;
-}
-else if(buyer=="PRIMARK"){
-limit=3;
-}
+
 
 let warpStatus=Math.abs(warp)<=limit?"✅ PASS":"❌ FAIL";
 let weftStatus=Math.abs(weft)<=limit?"✅ PASS":"❌ FAIL";

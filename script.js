@@ -65,6 +65,7 @@ let operator=document.getElementById("operator").value;
 let date=document.getElementById("date").value;
 let reportId = "LAB-" + (reports.length + 1).toString().padStart(4,"0");
 let report={
+  id: reportId,
 buyer,
 style,
 fabric,

@@ -63,7 +63,7 @@ let style=document.getElementById("style").value;
 let fabric=document.getElementById("fabric").value;
 let operator=document.getElementById("operator").value;
 let date=document.getElementById("date").value;
-let reportId = "LAB-" + (reports.length + 1).toString().padStart(4,"0");
+
 let report={
   id: reportId,
 buyer,
@@ -86,6 +86,7 @@ loadHistory();
 function loadHistory(){
 
 let reports = JSON.parse(localStorage.getItem("reports")) || [];
+let reportId = "LAB-" + (reports.length + 1).toString().padStart(4,"0");
 
 let search = document.getElementById("searchBox").value.toLowerCase();
 

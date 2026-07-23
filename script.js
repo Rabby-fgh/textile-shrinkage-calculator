@@ -122,6 +122,9 @@ fail++;
 document.getElementById("totalReports").innerText = reports.length;
 document.getElementById("totalPass").innerText = pass;
 document.getElementById("totalFail").innerText = fail;
+  let rate = reports.length == 0 ? 0 : (pass / reports.length) * 100;
+
+document.getElementById("passRate").innerText = rate.toFixed(0) + "%";
 }
 
 window.onload = loadHistory;

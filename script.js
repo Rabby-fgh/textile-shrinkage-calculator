@@ -140,3 +140,10 @@ loadHistory();
 }
 
 }
+function deleteAllReports(){
+
+localStorage.removeItem("reports");
+
+loadHistory();
+
+}

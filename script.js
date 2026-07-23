@@ -107,6 +107,7 @@ return;
 
 tbody.innerHTML += `
 <tr>
+<td>${report.id}</td>
 <td>${report.buyer}</td>
 <td>${report.style}</td>
 <td>${report.date}</td>

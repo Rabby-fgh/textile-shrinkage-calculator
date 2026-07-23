@@ -93,6 +93,13 @@ let pass = 0;
 let fail = 0;
 reports.forEach(function(report){
 
+if(
+!report.buyer.toLowerCase().includes(search) &&
+!report.style.toLowerCase().includes(search)
+){
+return;
+}{
+
 tbody.innerHTML += `
 <tr>
 <td>${report.buyer}</td>

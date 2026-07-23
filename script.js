@@ -66,6 +66,7 @@ Weft : ${weft.toFixed(2)}% (${weftStatus})
 </div>
 
 `;
+}
 function saveReport(){
 
 let buyer=document.getElementById("buyer").value;
@@ -124,11 +125,7 @@ fail++;
 });
 
 }
-document.getElementById("totalReports").innerText = reports.length;
 
-document.getElementById("totalPass").innerText = pass;
-
-document.getElementById("totalFail").innerText = fail;
 window.onload = loadHistory;
 function deleteReport(index){
 

@@ -123,7 +123,9 @@ pass++;
 fail++;
 }
 });
-
+document.getElementById("totalReports").innerText = reports.length;
+document.getElementById("totalPass").innerText = pass;
+document.getElementById("totalFail").innerText = fail;
 }
 
 window.onload = loadHistory;

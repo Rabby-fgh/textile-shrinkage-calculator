@@ -99,7 +99,8 @@ let reports = JSON.parse(localStorage.getItem("reports")) || [];
 let tbody = document.querySelector("#historyTable tbody");
 
 tbody.innerHTML = "";
-
+let pass = 0;
+let fail = 0;
 reports.forEach(function(report){
 
 tbody.innerHTML += `

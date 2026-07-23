@@ -111,7 +111,11 @@ tbody.innerHTML += `
 <td>${report.result.substring(0,30)}...</td>
 </tr>
 `;
-
+if(report.result.includes("PASS")){
+pass++;
+}else{
+fail++;
+}
 });
 
 }

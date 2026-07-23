@@ -85,7 +85,7 @@ loadHistory();
 function loadHistory(){
 
 let reports = JSON.parse(localStorage.getItem("reports")) || [];
-
+let search = document.getElementById("searchBox").value.toLowerCase();
 let tbody = document.querySelector("#historyTable tbody");
 
 tbody.innerHTML = "";

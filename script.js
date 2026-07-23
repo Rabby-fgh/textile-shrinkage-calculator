@@ -130,3 +130,18 @@ document.getElementById("totalPass").innerText = pass;
 
 document.getElementById("totalFail").innerText = fail;
 window.onload = loadHistory;
+function deleteReport(index){
+
+let reports = JSON.parse(localStorage.getItem("reports")) || [];
+
+if(confirm("Are you sure you want to delete this report?")){
+
+reports.splice(index,1);
+
+localStorage.setItem("reports",JSON.stringify(reports));
+
+loadHistory();
+
+}
+
+}

@@ -109,6 +109,11 @@ tbody.innerHTML += `
 <td>${report.style}</td>
 <td>${report.date}</td>
 <td>${report.result.substring(0,30)}...</td>
+<td>
+<button onclick="deleteReport(${reports.indexOf(report)})">
+🗑 Delete
+</button>
+</td>
 </tr>
 `;
 if(report.result.includes("PASS")){

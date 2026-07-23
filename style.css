@@ -173,3 +173,18 @@ border:1px solid #ddd;
 tr:nth-child(even){
 background:#f8f8f8;
 }
+button{
+background:#004aad;
+color:white;
+padding:12px 20px;
+border:none;
+border-radius:8px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+margin:5px;
+}
+
+button:hover{
+background:#0066cc;
+}

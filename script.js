@@ -85,12 +85,16 @@ loadHistory();
 function loadHistory(){
 
 let reports = JSON.parse(localStorage.getItem("reports")) || [];
+
 let search = document.getElementById("searchBox").value.toLowerCase();
+
 let tbody = document.querySelector("#historyTable tbody");
 
 tbody.innerHTML = "";
+
 let pass = 0;
 let fail = 0;
+
 reports.forEach(function(report){
 
 if(
@@ -98,7 +102,7 @@ if(
 !report.style.toLowerCase().includes(search)
 ){
 return;
-}{
+}
 
 tbody.innerHTML += `
 <tr>
@@ -113,18 +117,22 @@ tbody.innerHTML += `
 </td>
 </tr>
 `;
+
 if(report.result.includes("PASS")){
 pass++;
 }else{
 fail++;
 }
+
 });
+
 document.getElementById("totalReports").innerText = reports.length;
 document.getElementById("totalPass").innerText = pass;
 document.getElementById("totalFail").innerText = fail;
-  let rate = reports.length == 0 ? 0 : (pass / reports.length) * 100;
 
+let rate = reports.length == 0 ? 0 : (pass / reports.length) * 100;
 document.getElementById("passRate").innerText = rate.toFixed(0) + "%";
+
 }
 
 window.onload = loadHistory;
